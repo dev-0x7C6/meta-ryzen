@@ -29,6 +29,6 @@ APPEND += "rootwait console=ttyS0,115200 console=tty0"
 
 IMAGE_FSTYPES += "wic"
 WKS_FILE ?= "${@bb.utils.contains_any("EFI_PROVIDER", "systemd-boot", "systemd-bootdisk-microcode.wks.in", "grub-bootdisk-microcode.wks.in", d)}"
-WKS_FILE_DEPENDS_append = " intel-microcode"
+WKS_FILE_DEPENDS:append = " intel-microcode"
 
 KMACHINE = "intel-corei7-64"
